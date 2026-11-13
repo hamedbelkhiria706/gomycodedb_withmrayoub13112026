@@ -14,9 +14,7 @@ def open_conn(DB_FILE):
 def select_all():
     with open_conn("app.db") as conn:
         cursor=conn.execute("""
-        Select name
-        from sqlite_schema
-        where type='BASE TABLE'
+        Select * FROM users
         """)
         rows=cursor.fetchall()
         print("rows")
